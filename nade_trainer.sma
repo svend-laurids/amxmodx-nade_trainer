@@ -131,21 +131,21 @@ public Forward_SetModel(iIndex, const szModel[])
 					}
 				}
 
-				SetLaser(0, 255, 0, iIndex);
+				SetTrail(0, 255, 0, iIndex);
 			}
 			else if(equal(szModel[9], "hegrenade.mdl"))
 			{
 				pev(iIndex, pev_velocity, vVelocityGrenade);
 				pev(iIndex, pev_origin, vOriginGrenade);
 				AmountOfSavedGrenades = 1;
-				SetLaser(255, 0, 0, iIndex);
+				SetTrail(255, 0, 0, iIndex);
 			}
 			else if(equal(szModel[9], "smokegrenade.mdl"))
 			{
 				pev(iIndex, pev_velocity, vVelocitySmoke);
 				pev(iIndex, pev_origin, vOriginSmoke);
 				AmountOfSavedSmokes = 1;
-				SetLaser(0, 0, 255, iIndex);
+				SetTrail(0, 0, 255, iIndex);
 			}
 		}
 		case LOADNADES:
@@ -197,7 +197,7 @@ public Forward_SetModel(iIndex, const szModel[])
 	return FMRES_IGNORED;
 }
 
-public SetLaser(r, g, b, iIndex)
+public SetTrail(r, g, b, iIndex)
 {
 
 	message_begin(MSG_BROADCAST, SVC_TEMPENTITY);
